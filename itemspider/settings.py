@@ -7,6 +7,7 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 from fake_useragent import UserAgent
+
 BOT_NAME = "itemspider"
 
 SPIDER_MODULES = ["itemspider.spiders"]
@@ -28,7 +29,7 @@ NEWSPIDER_MODULE = "itemspider.spiders"
 # ROTATING_PROXY_BACKOFF_BASE = 5
 # ROTATING_PROXY_LOGSTATS_INTERVAL = 5
 
-LOG_FILE = '/home/stefan/SteamScrapers/CS2Scraper/logs'
+# LOG_FILE = '/logs.txt'
 
 # ua = UserAgent()
 # Crawl responsibly by identifying yourself (and your website) on the user-agent

@@ -1,0 +1,50 @@
+{
+    "status": "ok",
+    "datas": {
+        "itemspider": {
+            "steamspider": {
+                "2025-06-23T19_58_14": {
+                    "log_path": "/home/stefan/SteamScrapers/CS2Scraper/logs/itemspider/steamspider/2025-06-23T19_58_14.log",
+                    "json_path": "/home/stefan/SteamScrapers/CS2Scraper/logs/itemspider/steamspider/2025-06-23T19_58_14.json",
+                    "json_url": "http://127.0.0.1:6800/logs/itemspider/steamspider/2025-06-23T19_58_14.json",
+                    "size": 9813,
+                    "position": 9451,
+                    "status": "ok",
+                    "pages": 7,
+                    "items": 4,
+                    "first_log_time": "2025-06-23 19:58:26",
+                    "latest_log_time": "2025-06-23 19:59:45",
+                    "runtime": "0:01:19",
+                    "shutdown_reason": "N/A",
+                    "finish_reason": "N/A",
+                    "last_update_time": "2025-06-23 19:59:46"
+                }
+            }
+        }
+    },
+    "settings_py": "/home/stefan/SteamScrapers/CS2Scraper/.venv/lib/python3.13/site-packages/logparser/settings.py",
+    "settings": {
+        "scrapyd_server": "127.0.0.1:6800",
+        "scrapyd_logs_dir": "/home/stefan/SteamScrapers/CS2Scraper/logs",
+        "parse_round_interval": 10,
+        "enable_telnet": true,
+        "override_telnet_console_host": "",
+        "log_encoding": "utf-8",
+        "log_extensions": [
+            ".log",
+            ".txt"
+        ],
+        "log_head_lines": 100,
+        "log_tail_lines": 200,
+        "log_categories_limit": 10,
+        "jobs_to_keep": 100,
+        "chunk_size": 10000000,
+        "delete_existing_json_files_at_startup": false,
+        "keep_data_in_memory": false,
+        "verbose": false,
+        "main_pid": 44651
+    },
+    "last_update_timestamp": 1750701586,
+    "last_update_time": "2025-06-23 19:59:46",
+    "logparser_version": "0.8.4"
+}

@@ -63,14 +63,14 @@ CHECK_SCRAPYD_SERVERS = True
 # ScrapydWeb would try to directly read Scrapy logfiles from disk, instead of making a request
 # to the Scrapyd server.
 # e.g. '127.0.0.1:6800' or 'localhost:6801', do not forget the port number.
-LOCAL_SCRAPYD_SERVER = ''
+LOCAL_SCRAPYD_SERVER = '127.0.0.1:6800'
 
 # Enter the directory when you run Scrapyd, run the command below
 # to find out where the Scrapy logs are stored:
 # python -c "from os.path import abspath, isdir; from scrapyd.config import Config; path = abspath(Config().get('logs_dir')); print(path); print(isdir(path))"
 # Check out https://scrapyd.readthedocs.io/en/stable/config.html#logs-dir for more info.
 # e.g. 'C:/Users/username/logs' or '/home/username/logs'
-LOCAL_SCRAPYD_LOGS_DIR = '/home/stefan/SteamScrapers/CS2Scraper/logs'
+LOCAL_SCRAPYD_LOGS_DIR = '/home/stefan/SteamScrapers/CS2Scraper/logs' #
 
 # The default is False, set it to True to automatically run LogParser as a subprocess at startup.
 # Note that you can run the LogParser service separately via command 'logparser' as you like.
