@@ -28,8 +28,6 @@ NEWSPIDER_MODULE = "itemspider.spiders"
 # ROTATING_PROXY_BACKOFF_BASE = 5
 # ROTATING_PROXY_LOGSTATS_INTERVAL = 5
 
-LOG_FILE = '/home/stefan/SteamScrapers/CS2Scraper/logs'
-
 # ua = UserAgent()
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 # USER_AGENT = ua.random
@@ -88,12 +86,9 @@ DOWNLOADER_MIDDLEWARES = {
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    "itemspider.pipelines.ItemspiderPipeline": 300,
-    # "itemspider.pipelines.SaveToPostgreSQLPipeLine": 400,
+    "itemspider.pipelines.SaveToPostgreSQLPipeLine": 400,
 
 }
-
-
-
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
