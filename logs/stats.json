@@ -7,17 +7,33 @@
                     "log_path": "/home/stefan/SteamScrapers/CS2Scraper/logs/itemspider/steamspider/2025-06-23T19_58_14.log",
                     "json_path": "/home/stefan/SteamScrapers/CS2Scraper/logs/itemspider/steamspider/2025-06-23T19_58_14.json",
                     "json_url": "http://127.0.0.1:6800/logs/itemspider/steamspider/2025-06-23T19_58_14.json",
-                    "size": 9813,
-                    "position": 9451,
+                    "size": 11843,
+                    "position": 11843,
+                    "status": "ok",
+                    "pages": 8,
+                    "items": 5,
+                    "first_log_time": "2025-06-23 19:58:26",
+                    "latest_log_time": "2025-06-23 19:59:55",
+                    "runtime": "0:01:29",
+                    "shutdown_reason": "Received SIGINT",
+                    "finish_reason": "shutdown",
+                    "last_update_time": "2025-07-08 19:58:50"
+                },
+                "2025-07-08T20_01_00": {
+                    "log_path": "/home/stefan/SteamScrapers/CS2Scraper/logs/itemspider/steamspider/2025-07-08T20_01_00.log",
+                    "json_path": "/home/stefan/SteamScrapers/CS2Scraper/logs/itemspider/steamspider/2025-07-08T20_01_00.json",
+                    "json_url": "http://127.0.0.1:6800/logs/itemspider/steamspider/2025-07-08T20_01_00.json",
+                    "size": 10985,
+                    "position": 10985,
                     "status": "ok",
                     "pages": 7,
-                    "items": 4,
-                    "first_log_time": "2025-06-23 19:58:26",
-                    "latest_log_time": "2025-06-23 19:59:45",
-                    "runtime": "0:01:19",
-                    "shutdown_reason": "N/A",
-                    "finish_reason": "N/A",
-                    "last_update_time": "2025-06-23 19:59:46"
+                    "items": 3,
+                    "first_log_time": "2025-07-08 20:01:04",
+                    "latest_log_time": "2025-07-08 20:02:11",
+                    "runtime": "0:01:07",
+                    "shutdown_reason": "Received SIGINT",
+                    "finish_reason": "shutdown",
+                    "last_update_time": "2025-07-08 20:02:13"
                 }
             }
         }
@@ -42,9 +58,9 @@
         "delete_existing_json_files_at_startup": false,
         "keep_data_in_memory": false,
         "verbose": false,
-        "main_pid": 44651
+        "main_pid": 15759
     },
-    "last_update_timestamp": 1750701586,
-    "last_update_time": "2025-06-23 19:59:46",
+    "last_update_timestamp": 1751997733,
+    "last_update_time": "2025-07-08 20:02:13",
     "logparser_version": "0.8.4"
 }
