@@ -1,32 +1,32 @@
-# Dockerfile для Scrapy проекта
-FROM python:3.12-slim
+# Dockerfile для ScrapydWeb
+FROM python:3.13-slim
 
 # Установка системных зависимостей
 RUN apt-get update && apt-get install -y \
     gcc \
-    libpq-dev \
-    curl \
     && rm -rf /var/lib/apt/lists/*
+
+# Установка ScrapydWeb
+RUN pip install --no-cache-dir scrapydweb
 
 # Создание рабочей директории
 WORKDIR /app
 
-# Копирование requirements.txt и установка зависимостей
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+# Создание директории для данных
+RUN mkdir -p /app/data /app/app/data
 
-# Копирование проекта
-COPY . .
+# Установка переменных окружения
+ENV DATA_PATH=/app/data
+ENV DATABASE_URL=sqlite:////app/data/scrapydweb.db
 
-# Создание директорий для логов и eggs
-RUN mkdir -p /app/logs /app/eggs /app/dbs
+# Копирование настроек ScrapydWeb (если есть)
+COPY ./CS2Scraper/scrapydweb_settings_v11.py /app/
 
-# Установка переменных окружения для Scrapy
-ENV SCRAPY_SETTINGS_MODULE=itemspider.settings
-ENV PYTHONPATH=/app
+# Экспозиция порта
+EXPOSE 5000
 
-# Экспозиция порта для Scrapyd
-EXPOSE 6800
+# Установка рабочей директории для настроек
+ENV SCRAPYDWEB_SETTINGS_MODULE=scrapydweb_settings_v11
 
-# Команда запуска Scrapyd
-CMD ["scrapyd"]
+# Команда запуска ScrapydWeb
+CMD ["scrapydweb"]

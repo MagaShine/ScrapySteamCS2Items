@@ -1,80 +1,85 @@
 .
-├── build
-│   ├── bdist.linux-x86_64
-│   └── lib
-│       └── itemspider
-│           ├── __init__.py
-│           ├── items.py
-│           ├── middlewares.py
-│           ├── pipelines.py
-│           ├── settings.py
-│           └── spiders
-│               ├── __init__.py
-│               └── steamspider.py
-├── db_data
-│   ├── pg_commit_ts
-│   ├── pg_dynshmem
-│   ├── pg_logical
-│   │   ├── mappings
-│   │   └── snapshots
-│   ├── pg_notify
-│   ├── pg_replslot
-│   ├── pg_serial
-│   ├── pg_snapshots
-│   ├── pg_stat_tmp
-│   ├── pg_tblspc
-│   ├── pg_twophase
-│   └── pg_wal
-│       ├── archive_status
-│       └── summaries
-├── dbs
-│   ├── default.db
-│   ├── itemspider.db
-│   └── shell.db
-├── Dockerfile
-├── eggs
-│   └── itemspider
-│       └── 1750694267.egg
-├── itemspider
-│   ├── __init__.py
-│   ├── items.py
-│   ├── middlewares.py
-│   ├── pipelines.py
-│   ├── __pycache__
-│   │   ├── __init__.cpython-313.pyc
-│   │   ├── items.cpython-313.pyc
-│   │   ├── middlewares.cpython-313.pyc
-│   │   ├── pipelines.cpython-313.pyc
-│   │   └── settings.cpython-313.pyc
-│   ├── settings.py
-│   └── spiders
-│       ├── __init__.py
-│       ├── __pycache__
-│       │   ├── __init__.cpython-313.pyc
-│       │   └── steamspider.cpython-313.pyc
-│       └── steamspider.py
-├── logs
+├── CS2Scraper
+│   ├── build
+│   │   ├── bdist.linux-x86_64
+│   │   └── lib
+│   │       └── itemspider
+│   │           ├── __init__.py
+│   │           ├── items.py
+│   │           ├── middlewares.py
+│   │           ├── pipelines.py
+│   │           ├── settings.py
+│   │           └── spiders
+│   │               ├── __init__.py
+│   │               └── steamspider.py
+│   ├── db_data
+│   │   ├── pg_commit_ts
+│   │   ├── pg_dynshmem
+│   │   ├── pg_logical
+│   │   │   ├── mappings
+│   │   │   └── snapshots
+│   │   ├── pg_notify
+│   │   ├── pg_replslot
+│   │   ├── pg_serial
+│   │   ├── pg_snapshots
+│   │   ├── pg_stat_tmp
+│   │   ├── pg_tblspc
+│   │   ├── pg_twophase
+│   │   └── pg_wal
+│   │       ├── archive_status
+│   │       └── summaries
+│   ├── dbs
+│   │   ├── default.db
+│   │   ├── itemspider.db
+│   │   └── shell.db
+│   ├── Dockerfile
+│   ├── eggs
+│   │   └── itemspider
+│   │       └── 1750694267.egg
 │   ├── itemspider
-│   │   └── steamspider
-│   │       ├── 2025-06-23T19_58_14.json
-│   │       ├── 2025-06-23T19_58_14.log
-│   │       ├── 2025-07-08T20_01_00.json
-│   │       └── 2025-07-08T20_01_00.log
-│   └── stats.json
-├── pg_data
-├── project.egg-info
-│   ├── dependency_links.txt
-│   ├── entry_points.txt
-│   ├── PKG-INFO
-│   ├── SOURCES.txt
-│   └── top_level.txt
-├── __pycache__
-│   └── scrapydweb_settings_v11.cpython-313.pyc
-├── requirements.txt
-├── scrapy.cfg
-├── scrapydweb_settings_v11.py
-├── setup.py
-├── stats.json
-└── structure.txt
+│   │   ├── __init__.py
+│   │   ├── items.py
+│   │   ├── middlewares.py
+│   │   ├── pipelines.py
+│   │   ├── __pycache__
+│   │   │   ├── __init__.cpython-313.pyc
+│   │   │   ├── items.cpython-313.pyc
+│   │   │   ├── middlewares.cpython-313.pyc
+│   │   │   ├── pipelines.cpython-313.pyc
+│   │   │   └── settings.cpython-313.pyc
+│   │   ├── settings.py
+│   │   └── spiders
+│   │       ├── __init__.py
+│   │       ├── __pycache__
+│   │       │   ├── __init__.cpython-313.pyc
+│   │       │   └── steamspider.cpython-313.pyc
+│   │       └── steamspider.py
+│   ├── logs
+│   │   ├── itemspider
+│   │   │   └── steamspider
+│   │   │       ├── 2025-06-23T19_58_14.json
+│   │   │       ├── 2025-06-23T19_58_14.log
+│   │   │       ├── 2025-07-08T20_01_00.json
+│   │   │       └── 2025-07-08T20_01_00.log
+│   │   └── stats.json
+│   ├── pg_data
+│   ├── project.egg-info
+│   │   ├── dependency_links.txt
+│   │   ├── entry_points.txt
+│   │   ├── PKG-INFO
+│   │   ├── SOURCES.txt
+│   │   └── top_level.txt
+│   ├── __pycache__
+│   │   └── scrapydweb_settings_v11.cpython-313.pyc
+│   ├── requirements.txt
+│   ├── scrapy.cfg
+│   ├── scrapydweb_settings_v11.py
+│   ├── setup.py
+│   ├── stats.json
+│   └── structure.txt
+├── db_data  [error opening dir]
+├── docker-compose.yml
+├── structure.txt
+└── token
 
-35 directories, 43 files
+37 directories, 46 files
