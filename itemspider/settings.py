@@ -89,7 +89,7 @@ DOWNLOADER_MIDDLEWARES = {
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    "itemspider.pipelines.ItemspiderPipeline": 300,
-    # "itemspider.pipelines.SaveToPostgreSQLPipeLine": 400,
+    "itemspider.pipelines.SaveToPostgreSQLPipeLine": 400,
 
 }
 

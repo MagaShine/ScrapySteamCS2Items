@@ -6,6 +6,8 @@ import json
 import psycopg2
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
+import os
+
 
 # КОНСТРУКЦИЯ adapter.get('selling_price') ЗАБИРАЕТ ТЕКУЩЕЕ ЗНАЧЕНИЕ ITEMA
 # adapter['selling_price'] = float(value[0]) А ЭТОЙ СТРОЧКОЙ МЫ ОБРАБАТЫВАЕМ ПРЕДМЕТ, КАК НАМ УГОДНО И
@@ -35,13 +37,13 @@ class ItemspiderPipeline:
 
 class SaveToPostgreSQLPipeLine:
     def __init__(self):
+        # Получение настроек из переменных окружения для Docker
         self.conn = psycopg2.connect(
-            host="localhost",
-            port="5432",
-            dbname="maindb",
-            user="admin",
-
-            password="admin123"
+            host=os.environ.get('DB_HOST', 'postgres'),
+            port=os.environ.get('DB_PORT', '5432'),
+            dbname=os.environ.get('DB_NAME', 'items'),
+            user=os.environ.get('DB_USER', 'admin'),
+            password=os.environ.get('DB_PASSWORD', 'admin123')
         )
         print("Подключение к PostgreSQL установлено. SaveToPostgreSQLPipeLine инициализирован.")
         self.cur = self.conn.cursor()
@@ -54,31 +56,30 @@ class SaveToPostgreSQLPipeLine:
             selling_price DECIMAL NOT NULL
             );
         """)
-    def process_item(self,item,spider):
+        self.conn.commit()
 
-        self.cur.execute(f"""INSERT INTO SteamCSGO2items (url, profit, buying_price, selling_price)
-        VALUES (%s, %s, %s, %s)
-        ON CONFLICT (url) DO UPDATE 
-        SET profit = EXCLUDED.profit,
-            buying_price = EXCLUDED.buying_price,
-            selling_price = EXCLUDED.selling_price
-         """,
-        (
-        # item["item_nameid"],
-        item["url"],
-        item["profit"],
-        item["selling_price"],
-        item["buying_price"]
-        )
-        )
-        self.conn.commit()  # Важно делать коммит после каждой вставки
-        spider.logger.info(f"Успешно сохранен item с url: {item.get('url')}")
-        return item
+    def process_item(self, item, spider):
+        try:
+            # Вставка данных в таблицу
+            self.cur.execute("""
+                INSERT INTO SteamCSGO2items (url, profit, buying_price, selling_price)
+                VALUES (%s, %s, %s, %s)
+                ON CONFLICT (url) DO UPDATE SET
+                    profit = EXCLUDED.profit,
+                    buying_price = EXCLUDED.buying_price,
+                    selling_price = EXCLUDED.selling_price;
+            """, (item['url'], item['profit'], item['buying_price'], item['selling_price']))
+            self.conn.commit()
+            return item
+        except Exception as e:
+            print(f"Ошибка при вставке данных: {e}")
+            self.conn.rollback()
+            return item
 
-    def close_spider(self,spider):
-        spider.logger.info("Закрываю соединение с БД")
+    def close_spider(self, spider):
         self.cur.close()
         self.conn.close()
+        print("Подключение к PostgreSQL закрыто.")
 
     def stop_spider(self,spider):
         spider.logger.info("Закрываю соединение с БД")

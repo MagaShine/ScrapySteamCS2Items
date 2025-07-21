@@ -34,14 +34,62 @@
                     "shutdown_reason": "Received SIGINT",
                     "finish_reason": "shutdown",
                     "last_update_time": "2025-07-08 20:02:13"
+                },
+                "2025-07-21T06_40_52": {
+                    "log_path": "/app/logs/itemspider/steamspider/2025-07-21T06_40_52.log",
+                    "json_path": "/app/logs/itemspider/steamspider/2025-07-21T06_40_52.json",
+                    "json_url": "http://127.0.0.1:6800/logs/itemspider/steamspider/2025-07-21T06_40_52.json",
+                    "size": 6883,
+                    "position": 4385,
+                    "status": "ok",
+                    "pages": null,
+                    "items": null,
+                    "first_log_time": "2025-07-21 06:40:57",
+                    "latest_log_time": "2025-07-21 06:40:57",
+                    "runtime": "0:00:00",
+                    "shutdown_reason": "N/A",
+                    "finish_reason": "N/A",
+                    "last_update_time": "2025-07-21 06:41:06"
+                },
+                "2025-07-21T06_49_43": {
+                    "log_path": "/app/logs/itemspider/steamspider/2025-07-21T06_49_43.log",
+                    "json_path": "/app/logs/itemspider/steamspider/2025-07-21T06_49_43.json",
+                    "json_url": "http://127.0.0.1:6800/logs/itemspider/steamspider/2025-07-21T06_49_43.json",
+                    "size": 23639,
+                    "position": 23639,
+                    "status": "ok",
+                    "pages": 27,
+                    "items": 19,
+                    "first_log_time": "2025-07-21 06:49:49",
+                    "latest_log_time": "2025-07-21 06:55:22",
+                    "runtime": "0:05:33",
+                    "shutdown_reason": "Received SIGINT",
+                    "finish_reason": "shutdown",
+                    "last_update_time": "2025-07-21 06:55:23"
+                },
+                "2025-07-21T06_49_58": {
+                    "log_path": "/app/logs/itemspider/steamspider/2025-07-21T06_49_58.log",
+                    "json_path": "/app/logs/itemspider/steamspider/2025-07-21T06_49_58.json",
+                    "json_url": "http://127.0.0.1:6800/logs/itemspider/steamspider/2025-07-21T06_49_58.json",
+                    "size": 7239,
+                    "position": 7239,
+                    "status": "ok",
+                    "pages": 1,
+                    "items": 0,
+                    "first_log_time": "2025-07-21 06:50:04",
+                    "latest_log_time": "2025-07-21 06:50:06",
+                    "runtime": "0:00:02",
+                    "shutdown_reason": "Received SIGINT",
+                    "finish_reason": "shutdown",
+                    "last_update_time": "2025-07-21 06:50:12"
                 }
             }
         }
     },
-    "settings_py": "/home/stefan/SteamScrapers/CS2Scraper/.venv/lib/python3.13/site-packages/logparser/settings.py",
+    "settings_py": "/usr/local/lib/python3.13/site-packages/logparser/settings.py",
     "settings": {
         "scrapyd_server": "127.0.0.1:6800",
-        "scrapyd_logs_dir": "/home/stefan/SteamScrapers/CS2Scraper/logs",
+        "scrapyd_logs_dir": "/app/logs",
         "parse_round_interval": 10,
         "enable_telnet": true,
         "override_telnet_console_host": "",
@@ -58,9 +106,9 @@
         "delete_existing_json_files_at_startup": false,
         "keep_data_in_memory": false,
         "verbose": false,
-        "main_pid": 15759
+        "main_pid": 1
     },
-    "last_update_timestamp": 1751997733,
-    "last_update_time": "2025-07-08 20:02:13",
+    "last_update_timestamp": 1753080983,
+    "last_update_time": "2025-07-21 06:56:23",
     "logparser_version": "0.8.4"
 }
