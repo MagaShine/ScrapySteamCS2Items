@@ -36,7 +36,7 @@ services:
   scrapy:
     build:
       context: ./CS2Scraper
-      dockerfile: Dockerfile
+      dockerfile: CS2Scraper/scrapyd.Dockerfile
     container_name: cs2_scrapy
     environment:
       DB_HOST: postgres
