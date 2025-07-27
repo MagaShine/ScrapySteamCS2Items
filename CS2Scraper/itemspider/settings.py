@@ -9,7 +9,6 @@
 from fake_useragent import UserAgent
 
 BOT_NAME = "itemspider"
-
 SPIDER_MODULES = ["itemspider.spiders"]
 NEWSPIDER_MODULE = "itemspider.spiders"
 # в FEEDS МОЖНО УКАЗЫВАТЬ КАК ИНФОРМАЦИЯ БУДЕТ СОХРАНЯТЬСЯ
@@ -39,12 +38,12 @@ NEWSPIDER_MODULE = "itemspider.spiders"
 ROBOTSTXT_OBEY = False
 DUPEFILTER_DEBUG = False
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS = 1
+CONCURRENT_REQUESTS = 10
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY = 10
+DOWNLOAD_DELAY = 5
 # The download delay setting will honor only one of:
 # CONCURRENT_REQUESTS_PER_DOMAIN = 3
 # CONCURRENT_REQUESTS_PER_IP = 1

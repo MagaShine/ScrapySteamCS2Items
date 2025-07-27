@@ -1,4 +1,6 @@
 import re
+import os
+from os import environ
 
 import scrapy
 from fake_useragent import UserAgent
@@ -33,6 +35,7 @@ class SteamspiderSpider(scrapy.Spider):
     # p2_popular_desc
     def parse(self, response: HtmlResponse):
         data = response.text
+        proxy= os.getenv('PROXY')
         count = re.findall(r"\"total_count\":(\d+)", data)
         qty = re.findall(r"data-qty=\\\"(\d+)\\\"", data)
         steam_url = URL("https://steamcommunity.com/market/listings/730/")
@@ -55,8 +58,9 @@ class SteamspiderSpider(scrapy.Spider):
                     yield response.follow(
                         next_item_page,
                         callback=self.parse_item_page,
-                        meta={"buying_price": buying_prices[i]},
-                        headers={"User-Agent": self.ua.random},
+                        meta={"buying_price": buying_prices[i],
+                              'proxy': proxy},
+                        headers={"User-Agent": self.ua.random}
                     )
                 else:
                     print("out of price")
@@ -66,10 +70,10 @@ class SteamspiderSpider(scrapy.Spider):
             yield response.follow(
                 str(next_page.update_query({"start": i})),
                 callback=self.parse,
-                headers={"User-Agent": self.ua.random}
-                # meta={'proxy': 'http://localhost:3128'}
+                headers={"User-Agent": self.ua.random},
+                meta={'proxy': proxy}
             )
-
+#'https://tl-0ade6b79ad1035b33f36c9a279f7f5510e3204d1be0e00e8dd13ef85c7f30ca0-country-us-session-2eb63:xgbfiqxmi1ox@proxy.toolip.io:31114'
     # headers = {"User-Agent": self.ua.random}
     # f"https://steamcommunity.com/market/listings/730/{i}"
 
