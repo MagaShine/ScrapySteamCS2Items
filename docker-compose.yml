@@ -1,0 +1,92 @@
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: cs2_postgres
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - cs2_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: cs2_pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${ADMIN_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${ADMIN_PASSWORD}
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    ports:
+      - "5050:80"
+    networks:
+      - cs2_network
+    depends_on:
+      - postgres
+
+  scrapy:
+    build:
+      context: ./CS2Scraper
+      dockerfile: Dockerfile
+    container_name: cs2_scrapy
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      PROXY: ${PROXY}
+      SCRAPY_SETTINGS_MODULE: itemspider.settings
+    volumes:
+      - ./CS2Scraper/logs:/app/logs
+      - ./CS2Scraper/eggs:/app/eggs
+      - ./CS2Scraper/dbs:/app/dbs
+      - ./CS2Scraper/itemspider:/app/itemspider
+      - ./CS2Scraper/scrapy.cfg:/app/scrapy.cfg:ro
+    networks:
+      - cs2_network
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "6800:6800"
+
+  scrapydweb:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cs2_scrapydweb
+    environment:
+      SCRAPYDWEB_SETTINGS_MODULE: scrapydweb_settings_v11
+    volumes:
+      - scrapydweb_data:/app/data
+      - ./CS2Scraper/logs:/app/logs
+      - ./CS2Scraper/scrapydweb_settings_v11.py:/app/scrapydweb_settings_v11.py:ro
+    ports:
+      - "5000:5000"
+    networks:
+      - cs2_network
+    depends_on:
+      - scrapy
+
+
+volumes:
+  postgres_data:
+    driver: local
+  pgadmin_data:
+    driver: local
+  scrapydweb_data:
+    driver: local
+
+networks:
+  cs2_network:
+    driver: bridge

@@ -1,0 +1,98 @@
+{
+    "status": "ok",
+    "datas": {
+        "itemspider": {
+            "steamspider": {
+                "2025-07-22T14_01_52": {
+                    "log_path": "/app/logs/itemspider/steamspider/2025-07-22T14_01_52.log",
+                    "json_path": "/app/logs/itemspider/steamspider/2025-07-22T14_01_52.json",
+                    "json_url": "http://127.0.0.1:6800/logs/itemspider/steamspider/2025-07-22T14_01_52.json",
+                    "size": 188043,
+                    "position": 187681,
+                    "status": "ok",
+                    "pages": 181,
+                    "items": 154,
+                    "first_log_time": "2025-07-22 14:01:58",
+                    "latest_log_time": "2025-07-22 14:43:24",
+                    "runtime": "0:41:26",
+                    "shutdown_reason": "N/A",
+                    "finish_reason": "N/A",
+                    "last_update_time": "2025-07-22 14:43:25"
+                },
+                "2025-07-22T14_53_52": {
+                    "log_path": "/app/logs/itemspider/steamspider/2025-07-22T14_53_52.log",
+                    "json_path": "/app/logs/itemspider/steamspider/2025-07-22T14_53_52.json",
+                    "json_url": "http://127.0.0.1:6800/logs/itemspider/steamspider/2025-07-22T14_53_52.json",
+                    "size": 57468,
+                    "position": 57167,
+                    "status": "ok",
+                    "pages": 56,
+                    "items": 47,
+                    "first_log_time": "2025-07-22 14:53:55",
+                    "latest_log_time": "2025-07-22 15:05:02",
+                    "runtime": "0:11:07",
+                    "shutdown_reason": "N/A",
+                    "finish_reason": "N/A",
+                    "last_update_time": "2025-07-23 05:45:53"
+                },
+                "2025-07-23T05_46_34": {
+                    "log_path": "/app/logs/itemspider/steamspider/2025-07-23T05_46_34.log",
+                    "json_path": "/app/logs/itemspider/steamspider/2025-07-23T05_46_34.json",
+                    "json_url": "http://127.0.0.1:6800/logs/itemspider/steamspider/2025-07-23T05_46_34.json",
+                    "size": 69371,
+                    "position": 69247,
+                    "status": "ok",
+                    "pages": 62,
+                    "items": 51,
+                    "first_log_time": "2025-07-23 05:46:38",
+                    "latest_log_time": "2025-07-23 06:04:37",
+                    "runtime": "0:17:59",
+                    "shutdown_reason": "N/A",
+                    "finish_reason": "N/A",
+                    "last_update_time": "2025-07-23 06:04:44"
+                },
+                "2025-07-23T06_07_53": {
+                    "log_path": "/app/logs/itemspider/steamspider/2025-07-23T06_07_53.log",
+                    "json_path": "/app/logs/itemspider/steamspider/2025-07-23T06_07_53.json",
+                    "json_url": "http://127.0.0.1:6800/logs/itemspider/steamspider/2025-07-23T06_07_53.json",
+                    "size": 216792,
+                    "position": 216792,
+                    "status": "ok",
+                    "pages": 221,
+                    "items": 187,
+                    "first_log_time": "2025-07-23 06:07:56",
+                    "latest_log_time": "2025-07-23 06:52:46",
+                    "runtime": "0:44:50",
+                    "shutdown_reason": "N/A",
+                    "finish_reason": "finished",
+                    "last_update_time": "2025-07-23 06:52:49"
+                }
+            }
+        }
+    },
+    "settings_py": "/usr/local/lib/python3.13/site-packages/logparser/settings.py",
+    "settings": {
+        "scrapyd_server": "127.0.0.1:6800",
+        "scrapyd_logs_dir": "/app/logs",
+        "parse_round_interval": 10,
+        "enable_telnet": true,
+        "override_telnet_console_host": "",
+        "log_encoding": "utf-8",
+        "log_extensions": [
+            ".log",
+            ".txt"
+        ],
+        "log_head_lines": 100,
+        "log_tail_lines": 200,
+        "log_categories_limit": 10,
+        "jobs_to_keep": 100,
+        "chunk_size": 10000000,
+        "delete_existing_json_files_at_startup": false,
+        "keep_data_in_memory": false,
+        "verbose": false,
+        "main_pid": 1
+    },
+    "last_update_timestamp": 1753253859,
+    "last_update_time": "2025-07-23 06:57:39",
+    "logparser_version": "0.8.4"
+}

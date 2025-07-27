@@ -1,0 +1,496 @@
+2025-07-23 05:46:38 [scrapy.utils.log] INFO: Scrapy 2.13.2 started (bot: itemspider)
+2025-07-23 05:46:38 [scrapy.utils.log] INFO: Versions:
+{'lxml': '5.4.0',
+ 'libxml2': '2.13.8',
+ 'cssselect': '1.3.0',
+ 'parsel': '1.10.0',
+ 'w3lib': '2.0.0',
+ 'Twisted': '25.5.0',
+ 'Python': '3.12.11 (main, Jul 22 2025, 01:45:44) [GCC 12.2.0]',
+ 'pyOpenSSL': '25.1.0 (OpenSSL 3.5.0 8 Apr 2025)',
+ 'cryptography': '45.0.4',
+ 'Platform': 'Linux-6.15.3-1-MANJARO-x86_64-with-glibc2.36'}
+2025-07-23 05:46:38 [scrapy.addons] INFO: Enabled addons:
+[]
+2025-07-23 05:46:38 [asyncio] DEBUG: Using selector: EpollSelector
+2025-07-23 05:46:38 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2025-07-23 05:46:38 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2025-07-23 05:46:38 [scrapy.extensions.telnet] INFO: Telnet Password: 75583f2b69b4b3f4
+2025-07-23 05:46:38 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.throttle.AutoThrottle']
+2025-07-23 05:46:38 [scrapy.crawler] INFO: Overridden settings:
+{'AUTOTHROTTLE_ENABLED': True,
+ 'AUTOTHROTTLE_START_DELAY': 10,
+ 'AUTOTHROTTLE_TARGET_CONCURRENCY': 0.5,
+ 'BOT_NAME': 'itemspider',
+ 'CONCURRENT_REQUESTS': 2,
+ 'DOWNLOAD_DELAY': 5,
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'HTTPCACHE_IGNORE_HTTP_CODES': [429],
+ 'LOG_FILE': '/app/logs/itemspider/steamspider/2025-07-23T05_46_34.log',
+ 'NEWSPIDER_MODULE': 'itemspider.spiders',
+ 'SPIDER_MODULES': ['itemspider.spiders']}
+2025-07-23 05:46:38 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'itemspider.middlewares.ItemspiderDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2025-07-23 05:46:38 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.start.StartSpiderMiddleware',
+ 'scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'itemspider.middlewares.ItemspiderSpiderMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2025-07-23 05:46:38 [py.warnings] WARNING: /usr/local/lib/python3.12/site-packages/scrapy/core/spidermw.py:98: ScrapyDeprecationWarning: The following enabled spider middlewares, directly or through their parent classes, define the deprecated process_start_requests() method: itemspider.middlewares.ItemspiderSpiderMiddleware. process_start_requests() has been deprecated in favor of a new method, process_start(), to support asynchronous code execution. process_start_requests() will stop being called in a future version of Scrapy. If you use Scrapy 2.13 or higher only, replace process_start_requests() with process_start(); note that process_start() is a coroutine (async def). If you need to maintain compatibility with lower Scrapy versions, when defining process_start_requests() in a spider middleware class, define process_start() as well. See the release notes of Scrapy 2.13 for details: https://docs.scrapy.org/en/2.13/news.html
+  warn(
+
+2025-07-23 05:46:38 [scrapy.core.spidermw] WARNING: Middleware itemspider.middlewares.ItemspiderSpiderMiddleware doesn't support asynchronous spider output, this is deprecated and will stop working in a future version of Scrapy. The middleware should be updated to support it. Please see https://docs.scrapy.org/en/latest/topics/coroutines.html#for-middleware-users for more information.
+2025-07-23 05:46:38 [scrapy.middleware] INFO: Enabled item pipelines:
+['itemspider.pipelines.ItemspiderPipeline',
+ 'itemspider.pipelines.SaveToPostgreSQLPipeLine']
+2025-07-23 05:46:38 [scrapy.core.engine] INFO: Spider opened
+2025-07-23 05:46:38 [py.warnings] WARNING: /usr/local/lib/python3.12/site-packages/scrapy/core/spidermw.py:433: ScrapyDeprecationWarning: itemspider.spiders.steamspider.SteamspiderSpider defines the deprecated start_requests() method. start_requests() has been deprecated in favor of a new method, start(), to support asynchronous code execution. start_requests() will stop being called in a future version of Scrapy. If you use Scrapy 2.13 or higher only, replace start_requests() with start(); note that start() is a coroutine (async def). If you need to maintain compatibility with lower Scrapy versions, when overriding start_requests() in a spider class, override start() as well; you can use super() to reuse the inherited start() implementation without copy-pasting. See the release notes of Scrapy 2.13 for details: https://docs.scrapy.org/en/2.13/news.html
+  warn(
+
+2025-07-23 05:46:38 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2025-07-23 05:46:38 [steamspider] INFO: Spider opened: steamspider
+2025-07-23 05:46:38 [steamspider] INFO: Spider opened: steamspider
+2025-07-23 05:46:38 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2025-07-23 05:46:43 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): publicsuffix.org:443
+2025-07-23 05:46:43 [urllib3.connectionpool] DEBUG: https://publicsuffix.org:443 "GET /list/public_suffix_list.dat HTTP/1.1" 200 87715
+2025-07-23 05:46:44 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/search/render/?query=&start=4000&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730> (referer: None)
+2025-07-23 05:46:53 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:47:01 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/search/render/?query=&start=5100&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730> (referer: https://steamcommunity.com/market/search/render/?query=&start=4000&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:47:01 [scrapy.dupefilters] DEBUG: Filtered duplicate request: <GET https://steamcommunity.com/market/search/render/?query=&start=5000&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730> - no more duplicates will be shown (see DUPEFILTER_DEBUG to show all duplicates)
+2025-07-23 05:47:02 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:47:10 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/search/render/?query=&start=5000&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730> (referer: https://steamcommunity.com/market/search/render/?query=&start=4000&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:47:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/search/render/?query=&start=6900&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730> (referer: https://steamcommunity.com/market/search/render/?query=&start=4000&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:47:36 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:47:38 [scrapy.extensions.logstats] INFO: Crawled 4 pages (at 4 pages/min), scraped 0 items (at 0 items/min)
+2025-07-23 05:47:41 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/StatTrak%E2%84%A2%20P2000%20%7C%20Woodsman%20%28Factory%20New%29> (referer: https://steamcommunity.com/market/search/render/?query=&start=5100&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:47:41 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/StatTrak%E2%84%A2%20P2000%20%7C%20Woodsman%20%28Factory%20New%29>
+{'buying_price': 46.65,
+ 'profit': -10.85,
+ 'selling_price': 34.59,
+ 'url': 'https://steamcommunity.com/market/listings/730/StatTrak%E2%84%A2%20P2000%20%7C%20Woodsman%20%28Factory%20New%29'}
+2025-07-23 05:47:55 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:48:00 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/Krakow%202017%20Cache%20Souvenir%20Package> (referer: https://steamcommunity.com/market/search/render/?query=&start=5000&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:48:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/Krakow%202017%20Cache%20Souvenir%20Package>
+{'buying_price': 49.7,
+ 'profit': -0.94,
+ 'selling_price': 48.66,
+ 'url': 'https://steamcommunity.com/market/listings/730/Krakow%202017%20Cache%20Souvenir%20Package'}
+2025-07-23 05:48:13 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:48:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/Sticker%20%7C%20Ax1Le%20%28Gold%29%20%7C%20Rio%202022> (referer: https://steamcommunity.com/market/search/render/?query=&start=6900&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:48:17 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/Sticker%20%7C%20Ax1Le%20%28Gold%29%20%7C%20Rio%202022>
+{'buying_price': 19.58,
+ 'profit': -0.91,
+ 'selling_price': 18.565,
+ 'url': 'https://steamcommunity.com/market/listings/730/Sticker%20%7C%20Ax1Le%20%28Gold%29%20%7C%20Rio%202022'}
+2025-07-23 05:48:25 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:48:31 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/MP9%20%7C%20Latte%20Rush%20%28Well-Worn%29> (referer: https://steamcommunity.com/market/search/render/?query=&start=6900&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:48:31 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/MP9%20%7C%20Latte%20Rush%20%28Well-Worn%29>
+{'buying_price': 19.58,
+ 'profit': 1.24,
+ 'selling_price': 20.959,
+ 'url': 'https://steamcommunity.com/market/listings/730/MP9%20%7C%20Latte%20Rush%20%28Well-Worn%29'}
+2025-07-23 05:48:36 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:48:38 [scrapy.extensions.logstats] INFO: Crawled 8 pages (at 4 pages/min), scraped 4 items (at 4 items/min)
+2025-07-23 05:48:41 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/Sealed%20Graffiti%20%7C%20Recoil%20AK-47%20%28Tracer%20Yellow%29> (referer: https://steamcommunity.com/market/search/render/?query=&start=6900&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:48:41 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/Sealed%20Graffiti%20%7C%20Recoil%20AK-47%20%28Tracer%20Yellow%29>
+{'buying_price': 19.58,
+ 'profit': -13.14,
+ 'selling_price': 4.98,
+ 'url': 'https://steamcommunity.com/market/listings/730/Sealed%20Graffiti%20%7C%20Recoil%20AK-47%20%28Tracer%20Yellow%29'}
+2025-07-23 05:48:52 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:48:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/Sealed%20Graffiti%20%7C%20Recoil%20AK-47%20%28Battle%20Green%29> (referer: https://steamcommunity.com/market/search/render/?query=&start=6900&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:48:55 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/Sealed%20Graffiti%20%7C%20Recoil%20AK-47%20%28Battle%20Green%29>
+{'buying_price': 19.59,
+ 'profit': -7.14,
+ 'selling_price': 11.657,
+ 'url': 'https://steamcommunity.com/market/listings/730/Sealed%20Graffiti%20%7C%20Recoil%20AK-47%20%28Battle%20Green%29'}
+2025-07-23 05:49:01 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:49:05 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/Chroma%20Case%20Key> (referer: https://steamcommunity.com/market/search/render/?query=&start=6900&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:49:05 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/Chroma%20Case%20Key>
+{'buying_price': 19.59,
+ 'profit': -0.7,
+ 'selling_price': 18.81,
+ 'url': 'https://steamcommunity.com/market/listings/730/Chroma%20Case%20Key'}
+2025-07-23 05:49:12 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:49:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/StatTrak%E2%84%A2%20MAC-10%20%7C%20Curse%20%28Field-Tested%29> (referer: https://steamcommunity.com/market/search/render/?query=&start=6900&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:49:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/StatTrak%E2%84%A2%20MAC-10%20%7C%20Curse%20%28Field-Tested%29>
+{'buying_price': 19.61,
+ 'profit': 0.4,
+ 'selling_price': 20.057,
+ 'url': 'https://steamcommunity.com/market/listings/730/StatTrak%E2%84%A2%20MAC-10%20%7C%20Curse%20%28Field-Tested%29'}
+2025-07-23 05:49:30 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:49:35 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/P90%20%7C%20Fallout%20Warning%20%28Minimal%20Wear%29> (referer: https://steamcommunity.com/market/search/render/?query=&start=6900&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:49:38 [scrapy.extensions.logstats] INFO: Crawled 13 pages (at 5 pages/min), scraped 8 items (at 4 items/min)
+2025-07-23 05:49:46 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:49:48 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/P90%20%7C%20Tiger%20Pit%20%28Factory%20New%29> (referer: https://steamcommunity.com/market/search/render/?query=&start=6900&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:49:48 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/P90%20%7C%20Tiger%20Pit%20%28Factory%20New%29>
+{'buying_price': 25.61,
+ 'profit': -4.24,
+ 'selling_price': 20.9,
+ 'url': 'https://steamcommunity.com/market/listings/730/P90%20%7C%20Tiger%20Pit%20%28Factory%20New%29'}
+2025-07-23 05:49:56 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:50:00 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/Autograph%20Capsule%20%7C%20Cloud9%20%7C%20Cluj-Napoca%202015> (referer: https://steamcommunity.com/market/search/render/?query=&start=6900&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:50:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/Autograph%20Capsule%20%7C%20Cloud9%20%7C%20Cluj-Napoca%202015>
+{'buying_price': 19.68,
+ 'profit': 0.02,
+ 'selling_price': 19.699,
+ 'url': 'https://steamcommunity.com/market/listings/730/Autograph%20Capsule%20%7C%20Cloud9%20%7C%20Cluj-Napoca%202015'}
+2025-07-23 05:50:07 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:50:12 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/Sticker%20%7C%20mixwell%20%7C%20Cologne%202016> (referer: https://steamcommunity.com/market/search/render/?query=&start=6900&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:50:12 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/Sticker%20%7C%20mixwell%20%7C%20Cologne%202016>
+{'buying_price': 19.74,
+ 'profit': -1.21,
+ 'selling_price': 18.4,
+ 'url': 'https://steamcommunity.com/market/listings/730/Sticker%20%7C%20mixwell%20%7C%20Cologne%202016'}
+2025-07-23 05:50:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/StatTrak%E2%84%A2%20USP-S%20%7C%20Stainless%20%28Minimal%20Wear%29> (referer: https://steamcommunity.com/market/search/render/?query=&start=5000&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:50:17 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/StatTrak%E2%84%A2%20USP-S%20%7C%20Stainless%20%28Minimal%20Wear%29>
+{'buying_price': 49.92,
+ 'profit': 3.34,
+ 'selling_price': 53.63,
+ 'url': 'https://steamcommunity.com/market/listings/730/StatTrak%E2%84%A2%20USP-S%20%7C%20Stainless%20%28Minimal%20Wear%29'}
+2025-07-23 05:50:29 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:50:33 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/M4A1-S%20%7C%20Atomic%20Alloy%20%28Field-Tested%29> (referer: https://steamcommunity.com/market/search/render/?query=&start=5000&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:50:33 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/M4A1-S%20%7C%20Atomic%20Alloy%20%28Field-Tested%29>
+{'buying_price': 49.92,
+ 'profit': -2.6,
+ 'selling_price': 47.03,
+ 'url': 'https://steamcommunity.com/market/listings/730/M4A1-S%20%7C%20Atomic%20Alloy%20%28Field-Tested%29'}
+2025-07-23 05:50:36 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/AK-47%20%7C%20The%20Empress%20%28Field-Tested%29> (referer: https://steamcommunity.com/market/search/render/?query=&start=5000&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:50:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/AK-47%20%7C%20The%20Empress%20%28Field-Tested%29>
+{'buying_price': 49.92,
+ 'profit': -1.44,
+ 'selling_price': 48.316,
+ 'url': 'https://steamcommunity.com/market/listings/730/AK-47%20%7C%20The%20Empress%20%28Field-Tested%29'}
+2025-07-23 05:50:38 [scrapy.extensions.logstats] INFO: Crawled 19 pages (at 6 pages/min), scraped 14 items (at 6 items/min)
+2025-07-23 05:50:42 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:50:46 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:50:47 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/Sticker%20%7C%20dennis%20%28Foil%29%20%7C%20Atlanta%202017> (referer: https://steamcommunity.com/market/search/render/?query=&start=5000&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:50:47 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/Sticker%20%7C%20dennis%20%28Foil%29%20%7C%20Atlanta%202017>
+{'buying_price': 49.99,
+ 'profit': -18.33,
+ 'selling_price': 29.62,
+ 'url': 'https://steamcommunity.com/market/listings/730/Sticker%20%7C%20dennis%20%28Foil%29%20%7C%20Atlanta%202017'}
+2025-07-23 05:50:50 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/Sticker%20%7C%20Ultraviolet%20Poison%20Frog%20%28Foil%29> (referer: https://steamcommunity.com/market/search/render/?query=&start=5000&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:50:50 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/Sticker%20%7C%20Ultraviolet%20Poison%20Frog%20%28Foil%29>
+{'buying_price': 49.99,
+ 'profit': -12.27,
+ 'selling_price': 36.352,
+ 'url': 'https://steamcommunity.com/market/listings/730/Sticker%20%7C%20Ultraviolet%20Poison%20Frog%20%28Foil%29'}
+2025-07-23 05:51:00 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:51:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/Desert%20Eagle%20%7C%20Ocean%20Drive%20%28Minimal%20Wear%29> (referer: https://steamcommunity.com/market/search/render/?query=&start=5000&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:51:04 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/Desert%20Eagle%20%7C%20Ocean%20Drive%20%28Minimal%20Wear%29>
+{'buying_price': 50.0,
+ 'profit': -1.86,
+ 'selling_price': 47.93,
+ 'url': 'https://steamcommunity.com/market/listings/730/Desert%20Eagle%20%7C%20Ocean%20Drive%20%28Minimal%20Wear%29'}
+2025-07-23 05:51:12 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:51:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/M4A4%20%7C%20Hellfire%20%28Battle-Scarred%29> (referer: https://steamcommunity.com/market/search/render/?query=&start=5000&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:51:17 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/M4A4%20%7C%20Hellfire%20%28Battle-Scarred%29>
+{'buying_price': 72.14,
+ 'profit': -16.35,
+ 'selling_price': 53.968,
+ 'url': 'https://steamcommunity.com/market/listings/730/M4A4%20%7C%20Hellfire%20%28Battle-Scarred%29'}
+2025-07-23 05:51:26 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:51:31 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/Sticker%20%7C%20shox%20%28Foil%29%20%7C%20MLG%20Columbus%202016> (referer: https://steamcommunity.com/market/search/render/?query=&start=5000&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:51:31 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/Sticker%20%7C%20shox%20%28Foil%29%20%7C%20MLG%20Columbus%202016>
+{'buying_price': 50.0,
+ 'profit': 7.01,
+ 'selling_price': 57.793,
+ 'url': 'https://steamcommunity.com/market/listings/730/Sticker%20%7C%20shox%20%28Foil%29%20%7C%20MLG%20Columbus%202016'}
+2025-07-23 05:51:38 [scrapy.extensions.logstats] INFO: Crawled 24 pages (at 5 pages/min), scraped 19 items (at 5 items/min)
+2025-07-23 05:51:39 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:51:44 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/Sticker%20%7C%20NEO%20%28Foil%29%20%7C%20Atlanta%202017> (referer: https://steamcommunity.com/market/search/render/?query=&start=5000&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:51:44 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/Sticker%20%7C%20NEO%20%28Foil%29%20%7C%20Atlanta%202017>
+{'buying_price': 50.0,
+ 'profit': -18.65,
+ 'selling_price': 29.28,
+ 'url': 'https://steamcommunity.com/market/listings/730/Sticker%20%7C%20NEO%20%28Foil%29%20%7C%20Atlanta%202017'}
+2025-07-23 05:51:53 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:51:56 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/Sticker%20%7C%20koosta%20%28Foil%29%20%7C%20Cologne%202016> (referer: https://steamcommunity.com/market/search/render/?query=&start=5100&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:51:56 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/Sticker%20%7C%20koosta%20%28Foil%29%20%7C%20Cologne%202016>
+{'buying_price': 46.7,
+ 'profit': -18.53,
+ 'selling_price': 26.113,
+ 'url': 'https://steamcommunity.com/market/listings/730/Sticker%20%7C%20koosta%20%28Foil%29%20%7C%20Cologne%202016'}
+2025-07-23 05:52:07 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:52:12 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/AK-47%20%7C%20Aquamarine%20Revenge%20%28Field-Tested%29> (referer: https://steamcommunity.com/market/search/render/?query=&start=5100&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:52:12 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/AK-47%20%7C%20Aquamarine%20Revenge%20%28Field-Tested%29>
+{'buying_price': 46.76,
+ 'profit': -1.72,
+ 'selling_price': 44.85,
+ 'url': 'https://steamcommunity.com/market/listings/730/AK-47%20%7C%20Aquamarine%20Revenge%20%28Field-Tested%29'}
+2025-07-23 05:52:19 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:52:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/MAG-7%20%7C%20Bulldozer%20%28Minimal%20Wear%29> (referer: https://steamcommunity.com/market/search/render/?query=&start=5100&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:52:36 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:52:38 [scrapy.extensions.logstats] INFO: Crawled 28 pages (at 4 pages/min), scraped 22 items (at 3 items/min)
+2025-07-23 05:52:41 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/StatTrak%E2%84%A2%20Nova%20%7C%20Hyper%20Beast%20%28Field-Tested%29> (referer: https://steamcommunity.com/market/search/render/?query=&start=5100&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:52:48 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:52:52 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/MAG-7%20%7C%20Irradiated%20Alert%20%28Factory%20New%29> (referer: https://steamcommunity.com/market/search/render/?query=&start=5100&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:52:53 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/MAG-7%20%7C%20Irradiated%20Alert%20%28Factory%20New%29>
+{'buying_price': 46.76,
+ 'profit': -21.78,
+ 'selling_price': 22.56,
+ 'url': 'https://steamcommunity.com/market/listings/730/MAG-7%20%7C%20Irradiated%20Alert%20%28Factory%20New%29'}
+2025-07-23 05:53:01 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:53:06 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/Sticker%20%7C%20Team%20EnVyUs%20%28Foil%29%20%7C%20Boston%202018> (referer: https://steamcommunity.com/market/search/render/?query=&start=5100&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:53:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/Sticker%20%7C%20Team%20EnVyUs%20%28Foil%29%20%7C%20Boston%202018>
+{'buying_price': 46.76,
+ 'profit': -6.08,
+ 'selling_price': 40.008,
+ 'url': 'https://steamcommunity.com/market/listings/730/Sticker%20%7C%20Team%20EnVyUs%20%28Foil%29%20%7C%20Boston%202018'}
+2025-07-23 05:53:14 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:53:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/Souvenir%20Tec-9%20%7C%20Whiteout%20%28Minimal%20Wear%29> (referer: https://steamcommunity.com/market/search/render/?query=&start=5100&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:53:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/Souvenir%20Tec-9%20%7C%20Whiteout%20%28Minimal%20Wear%29>
+{'buying_price': 46.83,
+ 'profit': -4.18,
+ 'selling_price': 42.182,
+ 'url': 'https://steamcommunity.com/market/listings/730/Souvenir%20Tec-9%20%7C%20Whiteout%20%28Minimal%20Wear%29'}
+2025-07-23 05:53:28 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:53:34 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/PP-Bizon%20%7C%20Rust%20Coat%20%28Minimal%20Wear%29> (referer: https://steamcommunity.com/market/search/render/?query=&start=5100&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:53:34 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/PP-Bizon%20%7C%20Rust%20Coat%20%28Minimal%20Wear%29>
+{'buying_price': 46.82,
+ 'profit': -17.18,
+ 'selling_price': 27.73,
+ 'url': 'https://steamcommunity.com/market/listings/730/PP-Bizon%20%7C%20Rust%20Coat%20%28Minimal%20Wear%29'}
+2025-07-23 05:53:38 [scrapy.extensions.logstats] INFO: Crawled 33 pages (at 5 pages/min), scraped 26 items (at 4 items/min)
+2025-07-23 05:53:39 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:53:44 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/StatTrak%E2%84%A2%20G3SG1%20%7C%20Demeter%20%28Factory%20New%29> (referer: https://steamcommunity.com/market/search/render/?query=&start=5100&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:53:44 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/StatTrak%E2%84%A2%20G3SG1%20%7C%20Demeter%20%28Factory%20New%29>
+{'buying_price': 47.0,
+ 'profit': -11.25,
+ 'selling_price': 34.5,
+ 'url': 'https://steamcommunity.com/market/listings/730/StatTrak%E2%84%A2%20G3SG1%20%7C%20Demeter%20%28Factory%20New%29'}
+2025-07-23 05:53:54 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:54:02 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/search/render/?query=&start=6800&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730> (referer: https://steamcommunity.com/market/search/render/?query=&start=4000&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:54:09 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:54:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/search/render/?query=&start=6700&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730> (referer: https://steamcommunity.com/market/search/render/?query=&start=4000&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:54:22 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:54:30 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/search/render/?query=&start=6600&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730> (referer: https://steamcommunity.com/market/search/render/?query=&start=4000&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:54:38 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:54:38 [scrapy.extensions.logstats] INFO: Crawled 37 pages (at 4 pages/min), scraped 27 items (at 1 items/min)
+2025-07-23 05:54:43 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/StatTrak%E2%84%A2%20P90%20%7C%20Trigon%20%28Minimal%20Wear%29> (referer: https://steamcommunity.com/market/search/render/?query=&start=6800&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:54:43 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/StatTrak%E2%84%A2%20P90%20%7C%20Trigon%20%28Minimal%20Wear%29>
+{'buying_price': 20.26,
+ 'profit': -0.25,
+ 'selling_price': 19.98,
+ 'url': 'https://steamcommunity.com/market/listings/730/StatTrak%E2%84%A2%20P90%20%7C%20Trigon%20%28Minimal%20Wear%29'}
+2025-07-23 05:54:57 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:55:02 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://steamcommunity.com/market/listings/730/StatTrak%E2%84%A2%20MP7%20%7C%20Abyssal%20Apparition%20%28Factory%20New%29> (failed 1 times): 502 Bad Gateway
+2025-07-23 05:55:14 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:55:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/AUG%20%7C%20Lil%27%20Pig%20%28Battle-Scarred%29> (referer: https://steamcommunity.com/market/search/render/?query=&start=6600&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:55:19 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/AUG%20%7C%20Lil%27%20Pig%20%28Battle-Scarred%29>
+{'buying_price': 22.05,
+ 'profit': -0.9,
+ 'selling_price': 21.05,
+ 'url': 'https://steamcommunity.com/market/listings/730/AUG%20%7C%20Lil%27%20Pig%20%28Battle-Scarred%29'}
+2025-07-23 05:55:28 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:55:31 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/Sticker%20%7C%20cadiaN%20%28Gold%29%20%7C%20Rio%202022> (referer: https://steamcommunity.com/market/search/render/?query=&start=6600&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:55:31 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/Sticker%20%7C%20cadiaN%20%28Gold%29%20%7C%20Rio%202022>
+{'buying_price': 21.98,
+ 'profit': -3.09,
+ 'selling_price': 18.55,
+ 'url': 'https://steamcommunity.com/market/listings/730/Sticker%20%7C%20cadiaN%20%28Gold%29%20%7C%20Rio%202022'}
+2025-07-23 05:55:38 [scrapy.extensions.logstats] INFO: Crawled 40 pages (at 3 pages/min), scraped 30 items (at 3 items/min)
+2025-07-23 05:55:41 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:55:42 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/StatTrak%E2%84%A2%20Glock-18%20%7C%20Snack%20Attack%20%28Field-Tested%29> (referer: https://steamcommunity.com/market/search/render/?query=&start=6600&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:55:43 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/StatTrak%E2%84%A2%20Glock-18%20%7C%20Snack%20Attack%20%28Field-Tested%29>
+{'buying_price': 22.1,
+ 'profit': -0.02,
+ 'selling_price': 22.08,
+ 'url': 'https://steamcommunity.com/market/listings/730/StatTrak%E2%84%A2%20Glock-18%20%7C%20Snack%20Attack%20%28Field-Tested%29'}
+2025-07-23 05:55:55 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:55:59 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/Sticker%20%7C%20fer%20%28Gold%29%20%7C%20Berlin%202019> (referer: https://steamcommunity.com/market/search/render/?query=&start=6600&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:56:05 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:56:10 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/USP-S%20%7C%20Para%20Green%20%28Minimal%20Wear%29> (referer: https://steamcommunity.com/market/search/render/?query=&start=6600&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:56:10 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/USP-S%20%7C%20Para%20Green%20%28Minimal%20Wear%29>
+{'buying_price': 22.13,
+ 'profit': -1.17,
+ 'selling_price': 20.83,
+ 'url': 'https://steamcommunity.com/market/listings/730/USP-S%20%7C%20Para%20Green%20%28Minimal%20Wear%29'}
+2025-07-23 05:56:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/Sticker%20%7C%20huNter-%20%28Gold%29%20%7C%20Stockholm%202021> (referer: https://steamcommunity.com/market/search/render/?query=&start=6600&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:56:15 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/Sticker%20%7C%20huNter-%20%28Gold%29%20%7C%20Stockholm%202021>
+{'buying_price': 22.14,
+ 'profit': 3.7,
+ 'selling_price': 26.25,
+ 'url': 'https://steamcommunity.com/market/listings/730/Sticker%20%7C%20huNter-%20%28Gold%29%20%7C%20Stockholm%202021'}
+2025-07-23 05:56:24 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:56:28 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/StatTrak%E2%84%A2%20Desert%20Eagle%20%7C%20Light%20Rail%20%28Factory%20New%29> (referer: https://steamcommunity.com/market/search/render/?query=&start=6600&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:56:28 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/StatTrak%E2%84%A2%20Desert%20Eagle%20%7C%20Light%20Rail%20%28Factory%20New%29>
+{'buying_price': 22.19,
+ 'profit': 0.14,
+ 'selling_price': 22.348,
+ 'url': 'https://steamcommunity.com/market/listings/730/StatTrak%E2%84%A2%20Desert%20Eagle%20%7C%20Light%20Rail%20%28Factory%20New%29'}
+2025-07-23 05:56:37 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:56:38 [scrapy.extensions.logstats] INFO: Crawled 45 pages (at 5 pages/min), scraped 34 items (at 4 items/min)
+2025-07-23 05:56:39 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://steamcommunity.com/market/listings/730/Autograph%20Capsule%20%7C%20Group%20A%20%28Foil%29%20%7C%20Cologne%202015> (failed 1 times): 502 Bad Gateway
+2025-07-23 05:56:54 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:56:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/Souvenir%20MAG-7%20%7C%20Prism%20Terrace%20%28Factory%20New%29> (referer: https://steamcommunity.com/market/search/render/?query=&start=6600&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:56:56 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/Souvenir%20MAG-7%20%7C%20Prism%20Terrace%20%28Factory%20New%29>
+{'buying_price': 22.22,
+ 'profit': -2.15,
+ 'selling_price': 19.83,
+ 'url': 'https://steamcommunity.com/market/listings/730/Souvenir%20MAG-7%20%7C%20Prism%20Terrace%20%28Factory%20New%29'}
+2025-07-23 05:57:26 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:57:26 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:57:29 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/StatTrak%E2%84%A2%20Nova%20%7C%20Antique%20%28Field-Tested%29> (referer: https://steamcommunity.com/market/search/render/?query=&start=6600&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:57:30 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/StatTrak%E2%84%A2%20Nova%20%7C%20Antique%20%28Field-Tested%29>
+{'buying_price': 22.22,
+ 'profit': 1.7,
+ 'selling_price': 24.11,
+ 'url': 'https://steamcommunity.com/market/listings/730/StatTrak%E2%84%A2%20Nova%20%7C%20Antique%20%28Field-Tested%29'}
+2025-07-23 05:57:30 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/Sticker%20%7C%20byali%20%28Foil%29%20%7C%20Cologne%202015> (referer: https://steamcommunity.com/market/search/render/?query=&start=6700&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:57:30 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/Sticker%20%7C%20byali%20%28Foil%29%20%7C%20Cologne%202015>
+{'buying_price': 21.16,
+ 'profit': -9.0,
+ 'selling_price': 11.158,
+ 'url': 'https://steamcommunity.com/market/listings/730/Sticker%20%7C%20byali%20%28Foil%29%20%7C%20Cologne%202015'}
+2025-07-23 05:57:38 [scrapy.extensions.logstats] INFO: Crawled 48 pages (at 3 pages/min), scraped 37 items (at 3 items/min)
+2025-07-23 05:58:27 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:58:38 [scrapy.extensions.logstats] INFO: Crawled 48 pages (at 0 pages/min), scraped 37 items (at 0 items/min)
+2025-07-23 05:58:41 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/Sticker%20%7C%20Virtus.Pro%20%28Holo%29%20%7C%20Cologne%202016> (referer: https://steamcommunity.com/market/search/render/?query=&start=6700&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:58:41 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/Sticker%20%7C%20Virtus.Pro%20%28Holo%29%20%7C%20Cologne%202016>
+{'buying_price': 21.25,
+ 'profit': -0.33,
+ 'selling_price': 20.88,
+ 'url': 'https://steamcommunity.com/market/listings/730/Sticker%20%7C%20Virtus.Pro%20%28Holo%29%20%7C%20Cologne%202016'}
+2025-07-23 05:58:43 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:58:51 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/StatTrak%E2%84%A2%20FAMAS%20%7C%20Eye%20of%20Athena%20%28Minimal%20Wear%29> (referer: https://steamcommunity.com/market/search/render/?query=&start=6700&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:58:51 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/StatTrak%E2%84%A2%20FAMAS%20%7C%20Eye%20of%20Athena%20%28Minimal%20Wear%29>
+{'buying_price': 21.2,
+ 'profit': 0.6,
+ 'selling_price': 21.872,
+ 'url': 'https://steamcommunity.com/market/listings/730/StatTrak%E2%84%A2%20FAMAS%20%7C%20Eye%20of%20Athena%20%28Minimal%20Wear%29'}
+2025-07-23 05:59:15 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 05:59:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/Dual%20Berettas%20%7C%20Black%20Limba%20%28Factory%20New%29> (referer: https://steamcommunity.com/market/search/render/?query=&start=6700&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 05:59:21 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/Dual%20Berettas%20%7C%20Black%20Limba%20%28Factory%20New%29>
+{'buying_price': 21.2,
+ 'profit': -4.32,
+ 'selling_price': 16.402,
+ 'url': 'https://steamcommunity.com/market/listings/730/Dual%20Berettas%20%7C%20Black%20Limba%20%28Factory%20New%29'}
+2025-07-23 05:59:38 [scrapy.extensions.logstats] INFO: Crawled 51 pages (at 3 pages/min), scraped 40 items (at 3 items/min)
+2025-07-23 06:00:10 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 06:00:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/CZ75-Auto%20%7C%20Xiangliu%20%28Minimal%20Wear%29> (referer: https://steamcommunity.com/market/search/render/?query=&start=6700&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 06:00:14 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/CZ75-Auto%20%7C%20Xiangliu%20%28Minimal%20Wear%29>
+{'buying_price': 21.23,
+ 'profit': -3.36,
+ 'selling_price': 17.5,
+ 'url': 'https://steamcommunity.com/market/listings/730/CZ75-Auto%20%7C%20Xiangliu%20%28Minimal%20Wear%29'}
+2025-07-23 06:00:35 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 06:00:38 [scrapy.extensions.logstats] INFO: Crawled 52 pages (at 1 pages/min), scraped 41 items (at 1 items/min)
+2025-07-23 06:00:39 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/StatTrak%E2%84%A2%20Five-SeveN%20%7C%20Fowl%20Play%20%28Minimal%20Wear%29> (referer: https://steamcommunity.com/market/search/render/?query=&start=6700&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 06:00:40 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/StatTrak%E2%84%A2%20Five-SeveN%20%7C%20Fowl%20Play%20%28Minimal%20Wear%29>
+{'buying_price': 21.25,
+ 'profit': 0.4,
+ 'selling_price': 21.7,
+ 'url': 'https://steamcommunity.com/market/listings/730/StatTrak%E2%84%A2%20Five-SeveN%20%7C%20Fowl%20Play%20%28Minimal%20Wear%29'}
+2025-07-23 06:00:51 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 06:00:57 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/Sticker%20%7C%20Counter%20Logic%20Gaming%20%7C%20Cologne%202016> (referer: https://steamcommunity.com/market/search/render/?query=&start=6700&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 06:00:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/Sticker%20%7C%20Counter%20Logic%20Gaming%20%7C%20Cologne%202016>
+{'buying_price': 21.25,
+ 'profit': 0.31,
+ 'selling_price': 21.598,
+ 'url': 'https://steamcommunity.com/market/listings/730/Sticker%20%7C%20Counter%20Logic%20Gaming%20%7C%20Cologne%202016'}
+2025-07-23 06:01:10 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 06:01:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/UMP-45%20%7C%20K.O.%20Factory%20%28Factory%20New%29> (referer: https://steamcommunity.com/market/search/render/?query=&start=6700&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 06:01:14 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/UMP-45%20%7C%20K.O.%20Factory%20%28Factory%20New%29>
+{'buying_price': 21.27,
+ 'profit': -3.84,
+ 'selling_price': 17.008,
+ 'url': 'https://steamcommunity.com/market/listings/730/UMP-45%20%7C%20K.O.%20Factory%20%28Factory%20New%29'}
+2025-07-23 06:01:24 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 06:01:29 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/USP-S%20%7C%20Neo-Noir%20%28Well-Worn%29> (referer: https://steamcommunity.com/market/search/render/?query=&start=6700&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 06:01:29 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/USP-S%20%7C%20Neo-Noir%20%28Well-Worn%29>
+{'buying_price': 21.28,
+ 'profit': -1.62,
+ 'selling_price': 19.485,
+ 'url': 'https://steamcommunity.com/market/listings/730/USP-S%20%7C%20Neo-Noir%20%28Well-Worn%29'}
+2025-07-23 06:01:38 [scrapy.extensions.logstats] INFO: Crawled 56 pages (at 4 pages/min), scraped 45 items (at 4 items/min)
+2025-07-23 06:01:41 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 06:01:47 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/Sticker%20%7C%20MSL%20%28Foil%29%20%7C%20London%202018> (referer: https://steamcommunity.com/market/search/render/?query=&start=6800&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 06:01:47 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/Sticker%20%7C%20MSL%20%28Foil%29%20%7C%20London%202018>
+{'buying_price': 20.28,
+ 'profit': -4.8,
+ 'selling_price': 14.95,
+ 'url': 'https://steamcommunity.com/market/listings/730/Sticker%20%7C%20MSL%20%28Foil%29%20%7C%20London%202018'}
+2025-07-23 06:02:07 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 06:02:10 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/Sticker%20%7C%20apEX%20%28Gold%29%20%7C%20Berlin%202019> (referer: https://steamcommunity.com/market/search/render/?query=&start=6800&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 06:02:11 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/Sticker%20%7C%20apEX%20%28Gold%29%20%7C%20Berlin%202019>
+{'buying_price': 20.28,
+ 'profit': -5.11,
+ 'selling_price': 14.606,
+ 'url': 'https://steamcommunity.com/market/listings/730/Sticker%20%7C%20apEX%20%28Gold%29%20%7C%20Berlin%202019'}
+2025-07-23 06:02:35 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 06:02:38 [scrapy.extensions.logstats] INFO: Crawled 58 pages (at 2 pages/min), scraped 47 items (at 2 items/min)
+2025-07-23 06:02:39 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/Sticker%20%7C%20Fnatic%20%28Foil%29%20%7C%20London%202018> (referer: https://steamcommunity.com/market/search/render/?query=&start=6800&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 06:02:40 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/Sticker%20%7C%20Fnatic%20%28Foil%29%20%7C%20London%202018>
+{'buying_price': 20.35,
+ 'profit': -4.55,
+ 'selling_price': 15.29,
+ 'url': 'https://steamcommunity.com/market/listings/730/Sticker%20%7C%20Fnatic%20%28Foil%29%20%7C%20London%202018'}
+2025-07-23 06:03:06 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 06:03:10 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/Sticker%20%7C%20BnTeT%20%28Gold%29%20%7C%20Berlin%202019> (referer: https://steamcommunity.com/market/search/render/?query=&start=6800&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 06:03:11 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/Sticker%20%7C%20BnTeT%20%28Gold%29%20%7C%20Berlin%202019>
+{'buying_price': 20.3,
+ 'profit': -6.83,
+ 'selling_price': 12.71,
+ 'url': 'https://steamcommunity.com/market/listings/730/Sticker%20%7C%20BnTeT%20%28Gold%29%20%7C%20Berlin%202019'}
+2025-07-23 06:03:23 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 06:03:27 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/Sticker%20%7C%20B1ad3%20%28Foil%29%20%7C%20Cologne%202015> (referer: https://steamcommunity.com/market/search/render/?query=&start=6800&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 06:03:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/Sticker%20%7C%20B1ad3%20%28Foil%29%20%7C%20Cologne%202015>
+{'buying_price': 20.31,
+ 'profit': -5.07,
+ 'selling_price': 14.68,
+ 'url': 'https://steamcommunity.com/market/listings/730/Sticker%20%7C%20B1ad3%20%28Foil%29%20%7C%20Cologne%202015'}
+2025-07-23 06:03:37 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 06:03:38 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/StatTrak%E2%84%A2%20Desert%20Eagle%20%7C%20Conspiracy%20%28Field-Tested%29> (referer: https://steamcommunity.com/market/search/render/?query=&start=6800&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 06:03:38 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/StatTrak%E2%84%A2%20Desert%20Eagle%20%7C%20Conspiracy%20%28Field-Tested%29>
+{'buying_price': 20.32,
+ 'profit': -3.36,
+ 'selling_price': 16.59,
+ 'url': 'https://steamcommunity.com/market/listings/730/StatTrak%E2%84%A2%20Desert%20Eagle%20%7C%20Conspiracy%20%28Field-Tested%29'}
+2025-07-23 06:03:38 [scrapy.extensions.logstats] INFO: Crawled 62 pages (at 4 pages/min), scraped 51 items (at 4 items/min)
+2025-07-23 06:03:50 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 06:03:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/MAC-10%20%7C%20Toybox%20%28Minimal%20Wear%29> (referer: https://steamcommunity.com/market/search/render/?query=&start=6800&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 06:03:55 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/MAC-10%20%7C%20Toybox%20%28Minimal%20Wear%29>
+{'buying_price': 20.53,
+ 'profit': -2.77,
+ 'selling_price': 17.447,
+ 'url': 'https://steamcommunity.com/market/listings/730/MAC-10%20%7C%20Toybox%20%28Minimal%20Wear%29'}
+2025-07-23 06:04:01 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 06:04:05 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/Sticker%20%7C%20s1mple%20%28Foil%29%20%7C%20Katowice%202019> (referer: https://steamcommunity.com/market/search/render/?query=&start=6800&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 06:04:05 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/Sticker%20%7C%20s1mple%20%28Foil%29%20%7C%20Katowice%202019>
+{'buying_price': 20.33,
+ 'profit': 0.02,
+ 'selling_price': 20.35,
+ 'url': 'https://steamcommunity.com/market/listings/730/Sticker%20%7C%20s1mple%20%28Foil%29%20%7C%20Katowice%202019'}
+2025-07-23 06:04:11 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 06:04:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/listings/730/Autograph%20Capsule%20%7C%20OpTic%20Gaming%20%7C%20Atlanta%202017> (referer: https://steamcommunity.com/market/search/render/?query=&start=6800&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 06:04:15 [scrapy.core.scraper] DEBUG: Scraped from <200 https://steamcommunity.com/market/listings/730/Autograph%20Capsule%20%7C%20OpTic%20Gaming%20%7C%20Atlanta%202017>
+{'buying_price': 20.38,
+ 'profit': -0.98,
+ 'selling_price': 19.29,
+ 'url': 'https://steamcommunity.com/market/listings/730/Autograph%20Capsule%20%7C%20OpTic%20Gaming%20%7C%20Atlanta%202017'}
+2025-07-23 06:04:22 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 06:04:26 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/search/render/?query=&start=6500&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730> (referer: https://steamcommunity.com/market/search/render/?query=&start=4000&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 06:04:32 [scrapy.core.downloader.tls] WARNING: Ignoring error while verifying certificate from host "steamcommunity.com" (exception: ValueError('error parsing asn1 value: ParseError { kind: InvalidValue, location: [0, 0, "AttributeTypeValue::value", "AttributeValue::PrintableString"] }'))
+2025-07-23 06:04:37 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://steamcommunity.com/market/search/render/?query=&start=6400&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730> (referer: https://steamcommunity.com/market/search/render/?query=&start=4000&count=100&search_descriptions=0&sort_column=price&sort_dir=desc&appid=730)
+2025-07-23 06:04:38 [scrapy.extensions.logstats] INFO: Crawled 67 pages (at 5 pages/min), scraped 54 items (at 3 items/min)
