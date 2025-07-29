@@ -11,7 +11,6 @@ from yarl import URL
 from itemspider.items import SteamItem
 
 
-# todo СДЕЛАТЬ DOCKER-COMPOSE FILE ДЛЯ BACKEND, FRONTEND, DB ЧТОБЫ ИЗ КОРОБКИ МОЖНО БЫЛО ЗАПУСТИТЬ.
 
 class SteamspiderSpider(scrapy.Spider):
     name = "steamspider"
@@ -32,7 +31,6 @@ class SteamspiderSpider(scrapy.Spider):
             }).human_repr()
         )
 
-    # p2_popular_desc
     def parse(self, response: HtmlResponse):
         data = response.text
         proxy= os.getenv('PROXY')
@@ -73,9 +71,7 @@ class SteamspiderSpider(scrapy.Spider):
                 headers={"User-Agent": self.ua.random},
                 meta={'proxy': proxy}
             )
-#'https://tl-0ade6b79ad1035b33f36c9a279f7f5510e3204d1be0e00e8dd13ef85c7f30ca0-country-us-session-2eb63:xgbfiqxmi1ox@proxy.toolip.io:31114'
-    # headers = {"User-Agent": self.ua.random}
-    # f"https://steamcommunity.com/market/listings/730/{i}"
+
 
     def parse_item_page(self, response: HtmlResponse):
         steamitem = SteamItem()
